@@ -1,0 +1,44 @@
+[
+  {
+    "_id": 1,
+    "music_class_name": "Piano",
+    "activities": "Scales, Chords, Etudes",
+    "number_of_students": 130,
+    "image": "https://i.ibb.co/4sC2FSq/piano.jpg"
+  },
+  {
+    "_id": 2,
+    "music_class_name": "Guitar",
+    "activities": "Strumming, Fingerpicking, Sight-reading",
+    "number_of_students": 165,
+    "image": "https://i.ibb.co/FxR4mLX/guiter.jpg"
+  },
+  {
+    "_id": 3,
+    "music_class_name": "Violin",
+    "activities": "Bow technique, Orchestral excerpts, Solo repertoire",
+    "number_of_students": 180,
+    "image": "https://i.ibb.co/h2wN3Xb/violin.jpg"
+  },
+  {
+    "_id": 4,
+    "music_class_name": "Singing",
+    "activities": "Vocal warm-ups, Breathing exercises, Song interpretation",
+    "number_of_students": 150,
+    "image": "https://i.ibb.co/WzGw41P/singing.jpg"
+  },
+  {
+    "_id": 5,
+    "music_class_name": "Drums",
+    "activities": "Rudiments, Grooves, Fill patterns",
+    "number_of_students": 140,
+    "image": "https://i.ibb.co/R6mY2Pb/drums.jpg"
+  },
+  {
+    "_id": 6,
+    "music_class_name": "Flute",
+    "activities": "Scales, Embouchure exercises, Ensemble playing",
+    "number_of_students": 155,
+    "image": "https://i.ibb.co/9tC4FJ7/flute.jpg"
+  }
+]

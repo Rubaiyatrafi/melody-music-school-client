@@ -5,7 +5,7 @@ import "./Navbar.css";
 const Navbar = () => {
   return (
     <div>
-      <nav className="navbar md:flex-row  justify-between flex-col ">
+      <nav className="navbar md:flex-row  justify-between flex-col rounded mb-10">
         <div className="flex flex-col gap-3">
           <img className="w-12 rounded-lg" src={logo} alt="" />
           <h2 className="ml-2 text-4xl font-bold font-serif text-blue-950 title-name">
