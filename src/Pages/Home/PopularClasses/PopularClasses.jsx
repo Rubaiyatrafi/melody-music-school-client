@@ -1,13 +1,18 @@
 import { useEffect, useState } from "react";
-import Classes from "../Home/Classes/Classes";
 import "./PopularClasses.css";
+import PClasses from "../PClasses/PClasses";
 
 const PopularClasses = () => {
   const [classes, setClasses] = useState([]);
   useEffect(() => {
     fetch("classes.json")
       .then((res) => res.json())
-      .then((data) => setClasses(data));
+      .then((data) => {
+        const popularClasses = data.filter(
+          (classes) => classes.category === "Popular"
+        );
+        setClasses(popularClasses);
+      });
   }, []);
   return (
     <div>
@@ -19,7 +24,7 @@ const PopularClasses = () => {
       <div className=" rounded p-4">
         <div className=" grid md:grid-cols-3 gap-2">
           {classes.map((classes) => (
-            <Classes key={classes._id} classes={classes}></Classes>
+            <PClasses key={classes._id} classes={classes}></PClasses>
           ))}
         </div>
       </div>

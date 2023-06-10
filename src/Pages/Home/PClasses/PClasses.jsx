@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-const Classes = ({ classes }) => {
+const PClasses = ({ classes }) => {
   const { music_class_name, activities, number_of_students, image } = classes;
   return (
     <div className="classes p-5">
@@ -24,4 +24,4 @@ const Classes = ({ classes }) => {
   );
 };
 
-export default Classes;
+export default PClasses;
