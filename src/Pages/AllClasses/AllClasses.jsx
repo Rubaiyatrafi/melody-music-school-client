@@ -8,7 +8,7 @@ const AllClasses = ({ classes }) => {
     price,
   } = classes;
   return (
-    <div className="classes p-5">
+    <div className="classes p-5 hover:bg-gradient-to-r from-indigo-100 from-10% via-sky-300 via-30% to-emerald-200 to-90% rounded-md">
       <h1 className=" text-3xl font-extrabold text-purple-500 text-center mb-2">
         {music_class_name}
       </h1>

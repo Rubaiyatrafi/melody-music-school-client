@@ -4,7 +4,7 @@ import PInstructors from "../PInstructors/PInstructors";
 const PopularInstructors = () => {
   const [instructors, setInstructors] = useState([]);
   useEffect(() => {
-    fetch("classes.json")
+    fetch("http://localhost:5000/classes")
       .then((res) => res.json())
       .then((data) => {
         const popularInstructors = data.filter(
