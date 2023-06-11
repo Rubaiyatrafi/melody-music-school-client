@@ -14,8 +14,8 @@ const Banner = () => {
         <div className="absolute  flex  items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
           <div className="text-white space-y-7 pl-12 w-3/4">
             <h2 className="text-6xl font-extrabold">
-              Make Your <br /> <span className="text-rose-600">Soul</span> Free{" "}
-              <br />& Better
+              Make Your <br /> <span className="text-purple-500">Soul</span>{" "}
+              Free <br />& Better
             </h2>
             <p className="font-semibold bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)] p-3">
               There are many Music School in your side but we guarantee that we
@@ -43,8 +43,8 @@ const Banner = () => {
         <div className="absolute  flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
           <div className="text-white space-y-7 pl-12 w-3/4">
             <h2 className="text-6xl font-extrabold">
-              Make Your <br /> <span className="text-rose-600">Soul</span> Free{" "}
-              <br />& Better
+              Make Your <br /> <span className="text-purple-500">Soul</span>{" "}
+              Free <br />& Better
             </h2>
             <p className="font-semibold bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)] p-3">
               There are many Music School in your side but we guarantee that we
@@ -72,8 +72,8 @@ const Banner = () => {
         <div className="absolute  flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
           <div className="text-white space-y-7 pl-12 w-3/4">
             <h2 className="text-6xl font-extrabold">
-              Make Your <br /> <span className="text-rose-600">Soul</span> Free{" "}
-              <br />& Better
+              Make Your <br /> <span className="text-purple-500">Soul</span>{" "}
+              Free <br />& Better
             </h2>
             <p className="font-semibold bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)] p-3">
               There are many Music School in your side but we guarantee that we
@@ -101,8 +101,8 @@ const Banner = () => {
         <div className="absolute  flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
           <div className="text-white space-y-7 pl-12 w-3/4">
             <h2 className="text-6xl font-extrabold">
-              Make Your <br /> <span className="text-rose-600">Soul</span> Free{" "}
-              <br />& Better
+              Make Your <br /> <span className="text-purple-500">Soul</span>{" "}
+              Free <br />& Better
             </h2>
             <p className="font-semibold bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)] p-3">
               There are many Music School in your side but we guarantee that we
@@ -130,8 +130,8 @@ const Banner = () => {
         <div className="absolute  flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
           <div className="text-white space-y-7 pl-12 w-3/4">
             <h2 className="text-6xl font-extrabold">
-              Make Your <br /> <span className="text-rose-600">Soul</span> Free{" "}
-              <br />& Better
+              Make Your <br /> <span className="text-purple-500">Soul</span>{" "}
+              Free <br />& Better
             </h2>
             <p className="font-semibold bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)] p-3">
               There are many Music School in your side but we guarantee that we
