@@ -1,18 +1,25 @@
 import logo from "../../../assets/images/logo.png";
 import { NavLink } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 import "./Navbar.css";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  const [dispName, setDisplayName] = useState(false);
 
   const handleSignout = () => {
     logOut()
       .then((result) => {
         console.log(result);
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Logout Successfull",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       })
       .catch((error) => console.log(error));
   };
@@ -39,18 +46,14 @@ const Navbar = () => {
                 <button onClick={handleSignout}>
                   <NavLink>Signout</NavLink>
                 </button>
-                {dispName ? (
-                  <h2 className=" text-xs">{user.displayName}</h2>
-                ) : (
-                  <h2></h2>
-                )}
-                <img
-                  onMouseEnter={() => setDisplayName(true)}
-                  onMouseLeave={() => setDisplayName(false)}
-                  className="w-10 rounded-full"
-                  src={user.photoURL}
-                  alt=""
-                />
+                <div className=" flex flex-col">
+                  <img
+                    className="w-10 rounded-full"
+                    src={user.photoURL}
+                    alt=""
+                  />
+                  <p className=" text-xs">{user.displayName}</p>
+                </div>
               </span>
             </>
           ) : (
