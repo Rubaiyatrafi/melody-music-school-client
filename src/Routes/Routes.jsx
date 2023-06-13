@@ -8,6 +8,8 @@ import Register from "../Pages/Register/Register";
 import Dashboard from "../Layout/Dashboard";
 import PrivateRoute from "../Routes/PrivateRoute";
 import MySelectedClasses from "../Pages/Dashboard/MySelectedClasses/MySelectedClasses";
+import NotFound from "../Pages/NotFound/NotFound";
+import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 
 export const router = createBrowserRouter([
   {
@@ -48,6 +50,14 @@ export const router = createBrowserRouter([
         path: "myselectedclasses",
         element: <MySelectedClasses></MySelectedClasses>,
       },
+      {
+        path: "allusers",
+        element: <AllUsers></AllUsers>,
+      },
     ],
+  },
+  {
+    path: "*",
+    element: <NotFound></NotFound>,
   },
 ]);

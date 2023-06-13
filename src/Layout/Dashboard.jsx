@@ -8,11 +8,15 @@ import {
   FcGallery,
   FcReading,
   FcAssistant,
+  FcAddressBook,
+  FcBusinessman,
 } from "react-icons/fc";
 import useClasses from "../Hooks/UseClsasses";
 
 const Dashboard = () => {
   const [selectedClasses] = useClasses();
+
+  const isAdmin = true;
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -31,51 +35,105 @@ const Dashboard = () => {
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <ul className="menu p-4 w-80 h-full bg-gradient-to-r from-indigo-200 via-purple-300 to-pink-200 text-base-content">
           {/* Sidebar content here */}
-          <li className="flex flex-col items-center justify-center">
-            <div>
-              <img className="w-12 rounded-lg" src={logo} alt="" />
-            </div>
-            <div>
-              <span className=" text-lg font-bold text-red-500">
-                Melody Music School
-              </span>
-            </div>
-          </li>
-          <li>
-            <Link to="/dashboard/home">
-              <FcHome className=" text-xl"></FcHome>
-              <span className=" text-base font-semibold">My Home</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/dashboard/mySelectedClasses">
-              <FcLike className=" text-xl"></FcLike>
-              <span className=" text-base font-semibold">
-                My Selected Classes{" "}
-                <span className="badge badge-secondary">
-                  {selectedClasses?.length || 0}
-                </span>
-              </span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/dashboard/myEnrolledClasses">
-              <FcApproval className=" text-xl"></FcApproval>
-              <span className=" text-base font-semibold">
-                My Enrolled Classes
-              </span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/dashboard/myPayment">
-              <FcCurrencyExchange className=" text-xl"></FcCurrencyExchange>
-              <span className=" text-base font-semibold">Payment History</span>
-            </Link>
-            <Link to="/dashboard/myGallery">
-              <FcGallery className=" text-xl"></FcGallery>
-              <span className=" text-base font-semibold">My Gallery</span>
-            </Link>
-          </li>
+          {isAdmin ? (
+            <>
+              <li className="flex flex-col items-center justify-center">
+                <div>
+                  <img className="w-12 rounded-lg" src={logo} alt="" />
+                </div>
+                <div>
+                  <span className=" text-lg font-bold text-red-500">
+                    Melody Music School
+                  </span>
+                </div>
+              </li>
+              <li>
+                <Link to="/dashboard/home">
+                  <FcHome className=" text-xl"></FcHome>
+                  <span className=" text-base font-semibold">Admin Home</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/dashboard/mySelectedClasses">
+                  <FcAddressBook className=" text-xl"></FcAddressBook>
+                  <span className=" text-base font-semibold">
+                    Manage Classes
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/dashboard/allusers">
+                  <FcBusinessman className=" text-xl"></FcBusinessman>
+                  <span className=" text-base font-semibold">Manage Users</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/dashboard/myPayment">
+                  <FcCurrencyExchange className=" text-xl"></FcCurrencyExchange>
+                  <span className=" text-base font-semibold">
+                    Payment History
+                  </span>
+                </Link>
+                <Link to="/dashboard/myGallery">
+                  <FcGallery className=" text-xl"></FcGallery>
+                  <span className=" text-base font-semibold">
+                    Admin Gallery
+                  </span>
+                </Link>
+              </li>
+            </>
+          ) : (
+            <>
+              <li className="flex flex-col items-center justify-center">
+                <div>
+                  <img className="w-12 rounded-lg" src={logo} alt="" />
+                </div>
+                <div>
+                  <span className=" text-lg font-bold text-red-500">
+                    Melody Music School
+                  </span>
+                </div>
+              </li>
+              <li>
+                <Link to="/dashboard/home">
+                  <FcHome className=" text-xl"></FcHome>
+                  <span className=" text-base font-semibold">My Home</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/dashboard/mySelectedClasses">
+                  <FcLike className=" text-xl"></FcLike>
+                  <span className=" text-base font-semibold">
+                    My Selected Classes{" "}
+                    <span className="badge badge-secondary">
+                      {selectedClasses?.length || 0}
+                    </span>
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/dashboard/myEnrolledClasses">
+                  <FcApproval className=" text-xl"></FcApproval>
+                  <span className=" text-base font-semibold">
+                    My Enrolled Classes
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/dashboard/myPayment">
+                  <FcCurrencyExchange className=" text-xl"></FcCurrencyExchange>
+                  <span className=" text-base font-semibold">
+                    Payment History
+                  </span>
+                </Link>
+                <Link to="/dashboard/myGallery">
+                  <FcGallery className=" text-xl"></FcGallery>
+                  <span className=" text-base font-semibold">My Gallery</span>
+                </Link>
+              </li>
+            </>
+          )}
+
           <div className="divider"></div>
           <li>
             <Link to="/">
