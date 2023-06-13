@@ -90,7 +90,7 @@ const Dashboard = () => {
             </Link>
           </li>
           <li>
-            <Link>
+            <Link to="/instructors">
               <FcAssistant className=" text-xl"></FcAssistant>
               <span className=" text-base font-semibold">Instructors</span>
             </Link>

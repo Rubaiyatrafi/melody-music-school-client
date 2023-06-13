@@ -1,14 +1,17 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import logo from "../../assets/images/logo.png";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
+import { FaGoogle } from "react-icons/fa";
 
 const Register = () => {
   const [error, setError] = useState("");
 
-  const { createUser, userProfile } = useContext(AuthContext);
+  const { createUser, userProfile, signInWithGoogle } = useContext(AuthContext);
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const navigate = useNavigate();
 
@@ -34,20 +37,69 @@ const Register = () => {
         console.log(loggedUser);
         userProfile(name, photo)
           .then(() => {
+            const saveUser = { name: name, email: email, photo: photo };
             console.log("user info");
+            fetch("http://localhost:5000/users", {
+              method: "POST",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(saveUser),
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                if (data.insertedId) {
+                  form.reset();
+                  Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Register Successfull",
+                    showConfirmButton: false,
+                    timer: 1500,
+                  });
+                }
+              });
           })
           .catch((error) => console.log(error));
-        form.reset();
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "Register Successfull",
-          showConfirmButton: false,
-          timer: 1500,
-        });
+
         navigate("/");
       })
       .catch((error) => {
+        setError(error.message);
+      });
+  };
+  const handleGoogleSignin = () => {
+    signInWithGoogle()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        setError("");
+        const saveUser = {
+          name: loggedUser.displayName,
+          email: loggedUser.email,
+          photo: loggedUser.photoURL,
+        };
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(saveUser),
+        })
+          .then((res) => res.json())
+          .then(() => {
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "Register Successfull",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          });
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.error(error);
         setError(error.message);
       });
   };
@@ -136,6 +188,20 @@ const Register = () => {
                     type="submit"
                     value="Sign up"
                   />
+                </div>
+                <div className="form-control mt-10">
+                  <div className="text-center text-xs mb-2 text-red-600">
+                    <h1>or Signup with</h1>
+                  </div>
+                  <button
+                    onClick={handleGoogleSignin}
+                    className="btn btn-outline btn-secondary"
+                  >
+                    Login with Google{" "}
+                    <span className="text-xl ml-2 text-rose-400">
+                      <FaGoogle></FaGoogle>
+                    </span>
+                  </button>
                 </div>
               </form>
 
