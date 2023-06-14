@@ -22,21 +22,21 @@ const useAxiosSecure = () => {
       return config;
     });
 
-    // axiosSecure.interceptors.response.use(
-    //   (response) => response,
-    //   async (error) => {
-    //     if (
-    //       error.response &&
-    //       (error.response.status === 401 || error.response.status === 403)
-    //     ) {
-    //       console.log("error to check", error);
-    //       await logOut();
-    //       navigate("/login");
-    //     }
+    axiosSecure.interceptors.response.use(
+      (response) => response,
+      async (error) => {
+        if (
+          error.response &&
+          (error.response.status === 401 || error.response.status === 403)
+        ) {
+          console.log("error to check", error);
+          await logOut();
+          navigate("/login");
+        }
 
-    //     return Promise.reject(error);
-    //   }
-    // );
+        return Promise.reject(error);
+      }
+    );
   }, [logOut, navigate, axiosSecure]);
 
   return [axiosSecure];

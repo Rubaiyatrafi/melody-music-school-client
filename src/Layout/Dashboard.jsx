@@ -13,6 +13,7 @@ import {
 } from "react-icons/fc";
 import useClasses from "../Hooks/UseClsasses";
 import useAdmin from "../Hooks/UseAdmin";
+import useInstructors from "../Hooks/UseInstructors";
 
 const Dashboard = () => {
   const [selectedClasses] = useClasses();
@@ -20,6 +21,7 @@ const Dashboard = () => {
   // const isAdmin = true;
 
   const [isAdmin] = useAdmin();
+  const [isInstructors] = useInstructors();
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -70,18 +72,37 @@ const Dashboard = () => {
                   <span className=" text-base font-semibold">Manage Users</span>
                 </Link>
               </li>
+            </>
+          ) : isInstructors ? (
+            <>
+              <li className="flex flex-col items-center justify-center">
+                <div>
+                  <img className="w-12 rounded-lg" src={logo} alt="" />
+                </div>
+                <div>
+                  <span className=" text-lg font-bold text-red-500">
+                    Melody Music School
+                  </span>
+                </div>
+              </li>
               <li>
-                <Link to="/dashboard/myPayment">
-                  <FcCurrencyExchange className=" text-xl"></FcCurrencyExchange>
+                <Link to="/dashboard/home">
+                  <FcHome className=" text-xl"></FcHome>
                   <span className=" text-base font-semibold">
-                    Payment History
+                    Instructor Home
                   </span>
                 </Link>
-                <Link to="/dashboard/myGallery">
-                  <FcGallery className=" text-xl"></FcGallery>
-                  <span className=" text-base font-semibold">
-                    Admin Gallery
-                  </span>
+              </li>
+              <li>
+                <Link to="/dashboard/mySelectedClasses">
+                  <FcAddressBook className=" text-xl"></FcAddressBook>
+                  <span className=" text-base font-semibold">Add a Class</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/dashboard/mySelectedClasses">
+                  <FcAddressBook className=" text-xl"></FcAddressBook>
+                  <span className=" text-base font-semibold">My Classes</span>
                 </Link>
               </li>
             </>

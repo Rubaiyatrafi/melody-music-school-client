@@ -2,11 +2,13 @@ import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
 import { FcDeleteDatabase, FcButtingIn } from "react-icons/fc";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../../Hooks/UseAxiosSecure";
 
 const AllUsers = () => {
+  const [axiosSecure] = useAxiosSecure();
   const { data: users = [], refetch } = useQuery(["users"], async () => {
-    const res = await fetch("http://localhost:5000/users");
-    return res.json();
+    const res = await axiosSecure.get("/users");
+    return res.data;
   });
 
   const handleMakeAdmin = (user) => {
@@ -21,6 +23,24 @@ const AllUsers = () => {
             position: "center",
             icon: "success",
             title: `${user.name} is an Admin now`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
+  };
+  const handleMakeInstructors = (user) => {
+    fetch(`http://localhost:5000/users/instructors/${user._id}`, {
+      method: "PATCH",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount) {
+          refetch();
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: `${user.name} is an Instructors now`,
             showConfirmButton: false,
             timer: 1500,
           });
@@ -110,16 +130,31 @@ const AllUsers = () => {
                   <p className=" font-semibold">{user.email}</p>
                 </td>
                 <td>
-                  {user.role === "admin" ? (
-                    "admin"
-                  ) : (
-                    <button
-                      onClick={() => handleMakeAdmin(user)}
-                      className="btn btn-sm btn-ghost bg-pink-300"
-                    >
-                      <FcButtingIn className=" text-2xl"></FcButtingIn>
-                    </button>
-                  )}
+                  <div>
+                    {user.role === "admin" ? (
+                      "admin"
+                    ) : (
+                      <button
+                        onClick={() => handleMakeAdmin(user)}
+                        className="btn btn-sm  bg-pink-300"
+                      >
+                        <FcButtingIn className=" text-2xl"></FcButtingIn>
+
+                        <span className=" text-xs">Make Admin</span>
+                      </button>
+                    )}
+                    {user.role === "instructors" ? (
+                      "instructors"
+                    ) : (
+                      <button
+                        onClick={() => handleMakeInstructors(user)}
+                        className="btn btn-sm  bg-pink-300"
+                      >
+                        <FcButtingIn className=" text-2xl"></FcButtingIn>
+                        <span className=" text-xs">Make Instructors</span>
+                      </button>
+                    )}
+                  </div>
                 </td>
 
                 <td>
