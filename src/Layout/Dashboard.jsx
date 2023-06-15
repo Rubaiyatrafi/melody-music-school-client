@@ -94,7 +94,7 @@ const Dashboard = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/dashboard/mySelectedClasses">
+                <Link to="/dashboard/addclasses">
                   <FcAddressBook className=" text-xl"></FcAddressBook>
                   <span className=" text-base font-semibold">Add a Class</span>
                 </Link>
