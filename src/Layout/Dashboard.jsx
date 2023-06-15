@@ -100,7 +100,7 @@ const Dashboard = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/dashboard/mySelectedClasses">
+                <Link to="/dashboard/myclasses">
                   <FcAddressBook className=" text-xl"></FcAddressBook>
                   <span className=" text-base font-semibold">My Classes</span>
                 </Link>

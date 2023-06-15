@@ -1,16 +1,13 @@
 import logo from "../../../assets/images/logo.png";
 import { NavLink } from "react-router-dom";
-import { FcAssistant } from "react-icons/fc";
 import { useContext } from "react";
 
 import "./Navbar.css";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import Swal from "sweetalert2";
-import useClasses from "../../../Hooks/UseClsasses";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  const [selectedClasses] = useClasses();
 
   const handleSignout = () => {
     logOut()
@@ -44,15 +41,6 @@ const Navbar = () => {
             <>
               <span className="navbar md:flex-row  justify-between flex-col ">
                 <NavLink to="/dashboard">Dashboard</NavLink>
-                <NavLink to="/dashboard/myselectedclasses">
-                  <button className="btn">
-                    <FcAssistant></FcAssistant>
-                    <p className=" text-xs">My Classes</p>
-                    <div className="badge badge-secondary">
-                      {selectedClasses?.length || 0}
-                    </div>
-                  </button>
-                </NavLink>
 
                 <button onClick={handleSignout}>
                   <NavLink>Signout</NavLink>

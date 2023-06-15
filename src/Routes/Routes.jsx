@@ -12,6 +12,8 @@ import NotFound from "../Pages/NotFound/NotFound";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import AddClasses from "../Pages/Dashboard/AddClasses/AddClasses";
 import InstructorsRoutes from "./InstructorsRoutes";
+import MyClasses from "../Pages/Dashboard/MyClasses/MyClasses";
+import UpdateClass from "../Pages/Dashboard/UpdateClass/UpdateClass";
 
 export const router = createBrowserRouter([
   {
@@ -63,6 +65,18 @@ export const router = createBrowserRouter([
             <AddClasses></AddClasses>
           </InstructorsRoutes>
         ),
+      },
+      {
+        path: "myclasses",
+        element: (
+          <InstructorsRoutes>
+            <MyClasses></MyClasses>
+          </InstructorsRoutes>
+        ),
+      },
+      {
+        path: "updateclass",
+        element: <UpdateClass></UpdateClass>,
       },
     ],
   },

@@ -5,8 +5,7 @@ import { useForm } from "react-hook-form";
 const img_hosting_token = import.meta.env.VITE_Image_Upload_Token;
 import useAxiosSecure from "../../../Hooks/UseAxiosSecure";
 import Swal from "sweetalert2";
-
-const AddClasses = () => {
+const UpdateClass = () => {
   const [axiosSecure] = useAxiosSecure();
   const { user } = useAuth();
   //   console.log(user);
@@ -47,12 +46,12 @@ const AddClasses = () => {
           };
           // console.log(newClass);
           axiosSecure.post("/classes", newClass).then((data) => {
-            console.log("new class added", data.data);
+            console.log("Class Updated", data.data);
             if (data.data.insertedId) {
               reset();
               Swal.fire({
                 title: "Success!",
-                text: "Class added Successfully",
+                text: "Class Updated Successfully",
                 icon: "success",
                 confirmButtonText: "Cool",
               });
@@ -62,20 +61,19 @@ const AddClasses = () => {
       });
   };
   console.log(errors);
-
   return (
     <div className=" w-full p-5">
       <Helmet>
-        <title>Melody Music | Add Classes</title>
+        <title>Melody Music | Update Classe</title>
       </Helmet>
 
       <div className="bg-gradient-to-r from-indigo-100 from-10% via-sky-300 via-30% to-emerald-200 to-90% p-24 mt-10 mb-10 rounded-md">
         <h2 className="text-5xl font-extrabold text-center mb-6 text-purple-500">
-          Add a Class
+          Update a Class
         </h2>
         <hr />
         <p className=" text-center text-stone-500 font-semibold mb-10 mt-10">
-          Here you can add your Experience. Just read our terms & condition
+          Here you can update your Experience. Just read our terms & condition
           about this adding policy.
         </p>
         <hr />
@@ -187,7 +185,7 @@ const AddClasses = () => {
 
           <input
             type="submit"
-            value="Add A Class"
+            value="Update A Class"
             className="btn btn-primary btn-outline btn-block mt-10"
           />
         </form>
@@ -196,4 +194,4 @@ const AddClasses = () => {
   );
 };
 
-export default AddClasses;
+export default UpdateClass;
