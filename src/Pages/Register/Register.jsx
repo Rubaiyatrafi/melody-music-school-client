@@ -22,12 +22,21 @@ const Register = () => {
     const email = form.email.value;
     const photo = form.photo.value;
     const password = form.password.value;
-    console.log(name, email, photo, password);
+    const confirmpass = form.confirmpass.value;
+    console.log(name, email, photo, password, confirmpass);
 
     setError("");
-
-    if (password.length < 6) {
+    if (password !== confirmpass) {
+      setError("Your password did not match");
+      return;
+    } else if (password.length < 6) {
       setError("Your password must be at least Six charecters");
+      return;
+    } else if (!/(?=.*[!@#$&*]) /.test(password)) {
+      setError("Please add at least one special charecter");
+      return;
+    } else if (!/(?=.*[A-Z]) /.test(password)) {
+      setError("Please add at least one uppercase");
       return;
     }
 
@@ -177,6 +186,18 @@ const Register = () => {
                     type="password"
                     name="password"
                     placeholder="password"
+                    className="input input-bordered"
+                    required
+                  />
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Confirm Password</span>
+                  </label>
+                  <input
+                    type="password"
+                    name="confirmpass"
+                    placeholder="Confirm password"
                     className="input input-bordered"
                     required
                   />
