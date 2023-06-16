@@ -39,7 +39,7 @@ const Register = () => {
           .then(() => {
             const saveUser = { name: name, email: email, photo: photo };
             console.log("user info");
-            fetch("http://localhost:5000/users", {
+            fetch("https://melody-music-school-server-xi.vercel.app/users", {
               method: "POST",
               headers: {
                 "content-type": "application/json",
@@ -79,7 +79,7 @@ const Register = () => {
           email: loggedUser.email,
           photo: loggedUser.photoURL,
         };
-        fetch("http://localhost:5000/users", {
+        fetch("https://melody-music-school-server-xi.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

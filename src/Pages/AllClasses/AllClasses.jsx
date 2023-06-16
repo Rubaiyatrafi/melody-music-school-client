@@ -33,13 +33,16 @@ const AllClasses = ({ classes }) => {
         price,
         email: user.email,
       };
-      fetch("http://localhost:5000/selectedClasses", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(selectedClasses),
-      })
+      fetch(
+        "https://melody-music-school-server-xi.vercel.app/selectedClasses",
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(selectedClasses),
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           if (data.insertedId) {

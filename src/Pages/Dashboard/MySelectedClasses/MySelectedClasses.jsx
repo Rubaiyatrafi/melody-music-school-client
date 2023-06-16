@@ -20,9 +20,12 @@ const MySelectedClasses = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/selectedClasses/${row._id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://melody-music-school-server-xi.vercel.app/selectedClasses/${row._id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {

@@ -4,7 +4,7 @@ import PInstructors from "../PInstructors/PInstructors";
 const PopularInstructors = () => {
   const [instructors, setInstructors] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/classes")
+    fetch("https://melody-music-school-server-xi.vercel.app/classes")
       .then((res) => res.json())
       .then((data) => {
         const popularInstructors = data.filter(
