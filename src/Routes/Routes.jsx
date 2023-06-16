@@ -12,8 +12,13 @@ import NotFound from "../Pages/NotFound/NotFound";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import AddClasses from "../Pages/Dashboard/AddClasses/AddClasses";
 import InstructorsRoutes from "./InstructorsRoutes";
+import AdminRoutes from "./AdminRoutes";
 import MyClasses from "../Pages/Dashboard/MyClasses/MyClasses";
 import UpdateClass from "../Pages/Dashboard/UpdateClass/UpdateClass";
+import Payment from "../Pages/Dashboard/Payment/Payment";
+import UserHome from "../Pages/Dashboard/UserHome/UserHome";
+import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
+import InstructorHome from "../Pages/Dashboard/InstructorHome/InstructorHome";
 
 export const router = createBrowserRouter([
   {
@@ -51,12 +56,40 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
+        path: "userhome",
+        element: <UserHome></UserHome>,
+      },
+      {
         path: "myselectedclasses",
         element: <MySelectedClasses></MySelectedClasses>,
       },
       {
+        path: "payment",
+        element: <Payment></Payment>,
+      },
+      {
+        path: "adminhome",
+        element: (
+          <AdminRoutes>
+            <AdminHome></AdminHome>
+          </AdminRoutes>
+        ),
+      },
+      {
         path: "allusers",
-        element: <AllUsers></AllUsers>,
+        element: (
+          <AdminRoutes>
+            <AllUsers></AllUsers>
+          </AdminRoutes>
+        ),
+      },
+      {
+        path: "instructorhome",
+        element: (
+          <InstructorsRoutes>
+            <InstructorHome></InstructorHome>
+          </InstructorsRoutes>
+        ),
       },
       {
         path: "addclasses",

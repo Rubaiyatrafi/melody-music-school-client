@@ -5,7 +5,6 @@ import {
   FcApproval,
   FcCurrencyExchange,
   FcHome,
-  FcGallery,
   FcReading,
   FcAssistant,
   FcAddressBook,
@@ -53,7 +52,7 @@ const Dashboard = () => {
                 </div>
               </li>
               <li>
-                <Link to="/dashboard/home">
+                <Link to="/dashboard/adminhome">
                   <FcHome className=" text-xl"></FcHome>
                   <span className=" text-base font-semibold">Admin Home</span>
                 </Link>
@@ -86,7 +85,7 @@ const Dashboard = () => {
                 </div>
               </li>
               <li>
-                <Link to="/dashboard/home">
+                <Link to="/dashboard/instructorhome">
                   <FcHome className=" text-xl"></FcHome>
                   <span className=" text-base font-semibold">
                     Instructor Home
@@ -119,7 +118,7 @@ const Dashboard = () => {
                 </div>
               </li>
               <li>
-                <Link to="/dashboard/home">
+                <Link to="/dashboard/userhome">
                   <FcHome className=" text-xl"></FcHome>
                   <span className=" text-base font-semibold">My Home</span>
                 </Link>
@@ -149,10 +148,6 @@ const Dashboard = () => {
                   <span className=" text-base font-semibold">
                     Payment History
                   </span>
-                </Link>
-                <Link to="/dashboard/myGallery">
-                  <FcGallery className=" text-xl"></FcGallery>
-                  <span className=" text-base font-semibold">My Gallery</span>
                 </Link>
               </li>
             </>
