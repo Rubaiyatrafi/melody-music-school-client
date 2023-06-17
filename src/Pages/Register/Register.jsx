@@ -35,10 +35,11 @@ const Register = () => {
     } else if (!/(?=.*[!@#$&*]) /.test(password)) {
       setError("Please add at least one special charecter");
       return;
-    } else if (!/(?=.*[A-Z]) /.test(password)) {
-      setError("Please add at least one uppercase");
-      return;
     }
+    // else if (!/(?=.*[A-Z]) /.test(password)) {
+    //   setError("Please add at least one uppercase");
+    //   return;
+    // }
 
     createUser(email, password)
       .then((result) => {
