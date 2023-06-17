@@ -143,7 +143,7 @@ const Dashboard = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/dashboard/myPayment">
+                <Link to="/dashboard/paymenthis">
                   <FcCurrencyExchange className=" text-xl"></FcCurrencyExchange>
                   <span className=" text-base font-semibold">
                     Payment History

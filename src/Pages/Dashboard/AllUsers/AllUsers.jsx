@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
-import { FcDeleteDatabase, FcButtingIn } from "react-icons/fc";
+import { FcDeleteDatabase, FcButtingIn, FcAssistant } from "react-icons/fc";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/UseAxiosSecure";
 
@@ -159,7 +159,7 @@ const AllUsers = () => {
                         onClick={() => handleMakeInstructors(user)}
                         className="btn btn-sm  bg-pink-300"
                       >
-                        <FcButtingIn className=" text-2xl"></FcButtingIn>
+                        <FcAssistant className=" text-2xl"></FcAssistant>
                         <span className=" text-xs">Make Instructors</span>
                       </button>
                     )}

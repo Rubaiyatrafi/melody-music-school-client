@@ -20,6 +20,7 @@ import UserHome from "../Pages/Dashboard/UserHome/UserHome";
 import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
 import InstructorHome from "../Pages/Dashboard/InstructorHome/InstructorHome";
 import MyEnroll from "../Pages/Dashboard/MyEnroll/MyEnroll";
+import PaymentHis from "../Pages/Dashboard/PaymentHis/PaymentHis";
 
 export const router = createBrowserRouter([
   {
@@ -69,6 +70,10 @@ export const router = createBrowserRouter([
         element: <MyEnroll></MyEnroll>,
       },
       {
+        path: "paymenthis",
+        element: <PaymentHis></PaymentHis>,
+      },
+      {
         path: "payment",
         element: <Payment></Payment>,
       },
@@ -80,6 +85,7 @@ export const router = createBrowserRouter([
           </AdminRoutes>
         ),
       },
+
       {
         path: "allusers",
         element: (
