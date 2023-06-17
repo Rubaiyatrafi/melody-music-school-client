@@ -21,7 +21,13 @@ const PopularClasses = () => {
           Popular Classes
         </h1>
       </div>
-      <div className=" rounded p-4">
+      <div>
+        <p className=" text-center font-semibold text-2xl">
+          Here we show our best
+          <span className=" font-bold  text-purple-500"> Classes</span> for you
+        </p>
+      </div>
+      <div className=" rounded p-24">
         <div className=" grid md:grid-cols-3 gap-2">
           {classes.map((classes) => (
             <PClasses key={classes._id} classes={classes}></PClasses>

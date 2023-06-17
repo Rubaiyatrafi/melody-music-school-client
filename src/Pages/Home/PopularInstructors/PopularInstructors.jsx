@@ -17,10 +17,17 @@ const PopularInstructors = () => {
     <div>
       <div className="border-y-4 p-4 mb-4">
         <h1 className=" text-center font-bold font-serif text-4xl text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-xl p-3">
-          Popular Classes
+          Popular Instructor
         </h1>
       </div>
-      <div className=" rounded p-4">
+      <div>
+        <p className=" text-center font-semibold text-2xl">
+          Here we show our best
+          <span className=" font-bold  text-purple-500"> Instructor</span> for
+          you
+        </p>
+      </div>
+      <div className=" rounded p-24">
         <div className=" grid md:grid-cols-3 gap-2">
           {instructors.map((instructors) => (
             <PInstructors

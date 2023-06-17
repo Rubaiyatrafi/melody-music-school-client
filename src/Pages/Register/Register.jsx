@@ -32,11 +32,11 @@ const Register = () => {
     } else if (password.length < 6) {
       setError("Your password must be at least Six charecters");
       return;
-    } else if (!/(?=.*[!@#$&*]) /.test(password)) {
-      setError("Please add at least one special charecter");
-      return;
     }
-    // else if (!/(?=.*[A-Z]) /.test(password)) {
+    // else if (!/(?=.*[!@#$&*]) /.test(password)) {
+    //   setError("Please add at least one special charecter");
+    //   return;
+    // } else if (!/(?=.*[A-Z]) /.test(password)) {
     //   setError("Please add at least one uppercase");
     //   return;
     // }
