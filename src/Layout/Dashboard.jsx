@@ -135,7 +135,7 @@ const Dashboard = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/dashboard/myEnrolledClasses">
+                <Link to="/dashboard/myenroll">
                   <FcApproval className=" text-xl"></FcApproval>
                   <span className=" text-base font-semibold">
                     My Enrolled Classes
