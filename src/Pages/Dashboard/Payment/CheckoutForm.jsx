@@ -12,7 +12,7 @@ const CheckoutForm = ({ selectedClasses, price }) => {
   const [clientSecret, setClientSecret] = useState("");
   const [transactionId, setTransactionId] = useState("");
   const [processing, setProcessing] = useState(false);
-  console.log(processing);
+  // console.log(processing);
 
   useEffect(() => {
     // console.log(price);
@@ -108,7 +108,7 @@ const CheckoutForm = ({ selectedClasses, price }) => {
         />
         <button
           type="submit"
-          // disabled={!stripe || !clientSecret || processing}
+          disabled={!stripe || !clientSecret || processing}
           className=" btn btn-success  btn-sm mt-5"
         >
           Pay
